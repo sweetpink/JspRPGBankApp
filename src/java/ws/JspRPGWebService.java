@@ -15,8 +15,8 @@ import javax.jws.WebParam;
  *
  * @author User
  */
-@WebService(serviceName = "JspRPGBankService")
-public class JspRPGBankService {
+@WebService(serviceName = "JspRPGWebService")
+public class JspRPGWebService {
 
     /**
      * Web service operation
@@ -31,7 +31,7 @@ public class JspRPGBankService {
         }else if(valid == 1){
             
             transaction.MakePayment(creditcard, Float.parseFloat(amount));
-            return "The transaction was successful, " + amount + "was drawn";
+            return "The transaction was successful, " + Float.parseFloat(amount) + "was drawn";
         }
         return null;
     }
@@ -39,7 +39,5 @@ public class JspRPGBankService {
     /**
      * This is a sample web service operation
      */
-    
-    
     
 }
